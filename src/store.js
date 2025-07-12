@@ -4,6 +4,7 @@ import inventoryReducer from './features/inventorySlice.js';
 import cartReducer from './features/cartSlice.js';
 import currencyFilterReducer from './features/currencyFilterSlice.js';
 import searchTermReducer from './features/searchTermSlice.js';
+import productCategoryReducer from './features/productCategorySlice.js';
 
 // Correct: wrap your reducers in a 'reducer' object
 export const store = configureStore({
@@ -11,6 +12,7 @@ export const store = configureStore({
     inventory: inventoryReducer,
     cart: cartReducer,
     currencyFilter: currencyFilterReducer,
-    searchTerm: searchTermReducer
+    searchTerm: searchTermReducer,
+    productCategory: productCategoryReducer
   }
 });

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrencyFilter, setCurrency } from '../../features/currencyFilterSlice.js';
 
-export function CurrencyButton({ currency }) {
+export function CurrencyButton({ currency, setMenuOpen }) {
   const dispatch = useDispatch();
   const currencyFilter = useSelector(selectCurrencyFilter);
 
@@ -14,7 +14,10 @@ export function CurrencyButton({ currency }) {
   return (
     <button
       className={`currency-button ${isSelected ? 'selected' : ''}`}
-      onClick={handleClick}
+      onClick={()=>{
+        handleClick();
+        setMenuOpen(false);
+      }}
     >
       {currency}
     </button>

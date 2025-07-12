@@ -1,9 +1,7 @@
-import React,{useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import  { selectCart, clearCart } from '../../features/cartSlice.js';
 import { selectCurrencyFilter } from '../../features/currencyFilterSlice.js';
 import { CartList } from './CartList.jsx';
-
 import {
   calculateTotal,
   getCurrencySymbol
@@ -23,13 +21,15 @@ export const Cart = ({onCloseCart, cartItemsLength}) => {
 
   return (
     <div id="cart-modal">
-      <button className='close-cart-button' onClick = {() => onCloseCart()}>
-        <img
-          className='close-cart-icon'
-          alt='close-cart-icon'
-          src='/resources/icons8-close-window-32.png'
-        />
-      </button>
+      <div className='close-cart-button-container'>
+        <button className='close-cart-button' onClick = {() => onCloseCart()}>
+          <img
+            className='close-cart-icon'
+            alt='close-cart-icon'
+            src='/resources/icons8-close-window-32.png'
+          />
+        </button>
+      </div>
 
       {cartItemsLength > 0 ?
        <CartList/>

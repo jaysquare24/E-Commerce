@@ -11,7 +11,6 @@ export function calculatePrice(price, currency) {
   }
 }
 
-
 export function calculateTotal(cart, currency) {
   let totalUSD = 0;
   Object.keys(cart).forEach((itemName) => {

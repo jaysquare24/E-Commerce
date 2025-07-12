@@ -8,7 +8,6 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       const { name, price, img } = action.payload;
-
       const existingItem = state[name];
       const quantity = existingItem ? existingItem.quantity + 1 : 1;
 
@@ -25,7 +24,6 @@ const cartSlice = createSlice({
       if (state[name]) {
         delete state[name];
       }
-
     },
 
     clearCart: () => {

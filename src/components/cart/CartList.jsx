@@ -1,5 +1,3 @@
-// src/components/CartList.jsx
-
 import { useSelector } from 'react-redux';
 import { selectCart } from '../../features/cartSlice.js';
 import { CartItem } from './CartItem';

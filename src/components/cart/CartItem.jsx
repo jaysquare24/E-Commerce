@@ -54,7 +54,7 @@ export function CartItem({ name, item }) {
         </div>
       </div>
 
-      <button className='remove-item-button item-3' onClick={onRemoveItem}>
+      <button className='remove-item-button' onClick={onRemoveItem}>
         <img
           className='remove-item-icon'
           alt='remove-item-icon'

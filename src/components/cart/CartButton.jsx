@@ -3,7 +3,7 @@ import { useSelector}  from "react-redux";
 import { selectCart } from "../../features/cartSlice";
 import { Cart } from "./Cart";
 import { Modal } from "../Modal";
-import { CartList } from "./CartList";
+
 
 export const CartButton = () =>{
   const cart = useSelector(selectCart);
@@ -31,7 +31,7 @@ export const CartButton = () =>{
         <img
           className={`cart-icon${cartItemsLength > 0 ? " cart-icon--active" : ""}`}
           alt="cart-icon"
-          src="/resources/icons8-shopping-cart-32.png"
+          src="/resources/icons8-shopping-bag-32.png"
         />
         {cartItemsLength > 0 && (
           <span className="cart-items-length">{cartItemsLength}</span> 

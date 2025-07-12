@@ -5,7 +5,7 @@ export function InventoryList({ items, loading }) {
   if (loading) {
     return (
       <div className="inventory-loading">
-        <img src='resources/icons8-loading-circle.gif' alt='loading products'/>;
+        <img src='/resources/icons8-loading-circle.gif' alt='loading products'/>
       </div>
     );
   }
@@ -20,7 +20,7 @@ export function InventoryList({ items, loading }) {
 
   // Otherwise, render the inventory
   return (
-    <ul id="inventory-container" aria-label="Available products">
+    <ul className="products-container" aria-label="Available products">
       {items.map((item) => (
         <InventoryItem key={item.name} item={item} />
       ))}

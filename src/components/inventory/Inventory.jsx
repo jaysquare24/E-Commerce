@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectInventory, loadData } from '../../features/inventorySlice';
-import { selectSearchTerm } from '../../features/searchTermSlice';
 import { InventoryList } from './InventoryList';
+import { Outlet } from "react-router-dom";
 
 export const Inventory = () => {
   const inventory = useSelector(selectInventory);
-  const searchTerm = useSelector(selectSearchTerm);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 
@@ -19,13 +18,10 @@ export const Inventory = () => {
     return () => clearTimeout(timeout);
   }, [dispatch]);
 
-  const filteredInventory = inventory.filter((item) =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return( 
     <section className='inventory-section'>
-      <InventoryList items={filteredInventory} loading={loading} />
+      <InventoryList items={inventory} loading={loading} />
+      <Outlet/>
     </section>
   );
 };
