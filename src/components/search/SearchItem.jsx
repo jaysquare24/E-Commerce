@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectInventory, loadData } from '../../features/inventorySlice';
 import { InventoryList } from '../inventory/InventoryList';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { BannerSection } from '../BannerSection';
 
 export const SearchItem = () => {
   const inventory = useSelector(selectInventory);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { value } = useParams();
   const [loading, setLoading] = useState(true);
   

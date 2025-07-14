@@ -64,8 +64,12 @@ export function InventoryItem({ item }) {
             <div className='productModal-content'>
               <h2>{name}</h2>
               <h3 className="price">
-                Price: {getCurrencySymbol(currencyFilter)}
-                {displayPrice} {currencyFilter}
+                {getCurrencySymbol(currencyFilter)}
+                {Number(displayPrice).toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}{' '}
+                {currencyFilter}
               </h3>
               <button className="add-to-cart-button" onClick={onClickHandler}>Add to Cart</button>
               <button className='cancel-button' onClick={onCloseItemModal}>X</button>

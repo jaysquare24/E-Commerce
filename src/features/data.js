@@ -16,8 +16,16 @@ export const inventoryData = [
   {name: 'Leather Bag', category:'bag', price:20.99, img:'https://thumbs.dreamstime.com/b/lady-s-bag-white-background-stock-photo-leather-handbag-white-background-121001975.jpg'},
   {name: 'Yellow Leather Bag', category:'bag', price:18.99, img:'https://freepngimg.com/thumb/women_bag/5-2-women-bag-transparent.png'},
   {name: 'Laptop Bag', category:'bag', price:13.99, img:'https://thumbs.dreamstime.com/b/laptop-bags-white-background-isolated-67686580.jpg'},
-];
-
+  { name: 'Denim Jacket', category: 'top', price: 39.99, img: 'https://cdn.lookastic.com/blue-denim-shirt/pull-bear-denim-shirt-with-double-pocket-detail-in-regular-fit-original-617958.jpg' },
+{ name: 'Blue Hoodie', category: 'top', price: 42.99, img: 'https://images.bewakoof.com/original/women-s-upbeat-blue-hoodies-464309-1732727298-1.jpg' },
+{ name: 'Sport Shorts', category: 'pant', price: 19.99, img: 'https://m.media-amazon.com/images/I/71267QvPS5S._AC_UL1500_.jpg' },
+{ name: 'Sunglasses', category: 'glasses', price: 9.99, img: 'https://cdn.shopify.com/s/files/1/0193/6253/products/269519403_2000x.jpg?v=1575932178' },
+{ name: 'Tote Bag', category: 'bag', price: 11.49, img: 'https://www.coastandcountrycrafts.co.uk/wp-content/uploads/2019/04/alexandra-tote.jpg' },
+{ name: 'Boots', category: 'foot', price: 37.50, img: 'https://img.kwcdn.com/product/visage/image/1665477587368/9077685415375322357.png' },
+{ name: 'Gray Beanie', category: 'cap', price: 15.00, img: 'https://www.headict.co.uk/40638-large_default/warmth-beanie-grey.jpg' },
+{ name: 'Track Pants', category: 'pant', price: 29.95, img: 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/66f91814b7ef4cebb25cafb100e9510f_9366/IN4718_HM1.jpg' },
+{ name: 'Checked Shirt', category: 'top', price: 25.99, img: 'https://dynamic.zacdn.com/nnsnUsZuclfJ87dLX0c3HDSExWI=/filters:quality(70):format(webp)/https://static-ph.zacdn.com/p/trendyol-9704-2732203-1.jpg' }
+]
 export const currenciesData = ['USD','NGN', 'EUR', 'CAD'];
 
 export const bannerImages =[

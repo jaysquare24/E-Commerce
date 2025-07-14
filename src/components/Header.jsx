@@ -14,7 +14,7 @@ export const Header = () => {
   const [showNotification, setShowNotification] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const menuRef = useRef(null); // 
+  const menuRef = useRef(null);  
 
   // Close category dropdown when clicking outside
   useEffect(() => {
@@ -71,14 +71,14 @@ export const Header = () => {
       {showNotification && (
         <div className="header-notification">
           <div className="header-title-marquee">
-            <p className="header-title">Hello! You are Welcome to Jay Elegant Fashion Store!</p>
+            <p className="header-title">Attention!!! Delivery Fee is Not Included in All Payment. It Will Be Paid Directly To The Handlers.</p>
           </div>
           <button
             onClick={() => {
               setShowNotification(false);
             }}
           >
-            close
+           close
           </button>
         </div>
       )}
@@ -102,11 +102,11 @@ export const Header = () => {
           <NavLink to="/" className={({ isActive }) => isActive ? "link active" : "link"} onClick={()=>setMenuOpen(false)}>Home</NavLink>
           <NavLink to="/aboutUs" className={({ isActive }) => isActive ? "link active" : "link"} onClick={()=>setMenuOpen(false)}>About Us</NavLink>
           <NavLink to="/shop" className={({ isActive }) => isActive ? "link active" : "link"} onClick={()=>setMenuOpen(false)}>Shop</NavLink>
-          <SearchTerm />
+          <SearchTerm setMenuOpen={setMenuOpen} />
           <div ref={dropdownRef}>
             <button
               className="category-dropdown-toggle"
-              onClick={() => setOpenCategories((prev) => !prev)}
+              onClick={() => setOpenCategories(prev => !prev)}
               type="button"
             >
               Select Categories

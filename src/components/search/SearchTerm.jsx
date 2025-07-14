@@ -3,7 +3,7 @@ import { setSearchTerm, clearSearchTerm, selectSearchTerm } from '../../features
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
-export const SearchTerm = () => {
+export const SearchTerm = ({setMenuOpen}) => {
   const searchTerm = useSelector(selectSearchTerm);  
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState(searchTerm);
@@ -44,7 +44,7 @@ export const SearchTerm = () => {
         aria-label="Search products"
       />
 
-      <button type='submit' className="search-icon">
+      <button type='submit' className="search-icon" onClick={()=>setMenuOpen(prev => !prev)}>
         <img alt="Search" src="/resources/icons8-search.svg" />
       </button>
     </form>
