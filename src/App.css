@@ -1107,20 +1107,28 @@ footer a{
   .contacts-container{
     text-align: center;
   }
+
+  /* Header and footer Styles */
+  .header button, .header .link{
+    font-size: 2cqw;
+  }
+
+  footer{
+    font-size: 2cqw;
+  }
 }
 
-@media screen and (max-width:600px){
-    
-  
-
-  
-}
 
 @media screen and (max-width: 480px) {
   /* Header Styles */
   .header-title{
     font-size: 0.8rem;
   }
+
+  .header button, .header .link{
+    font-size: 4cqw;
+  }
+
 
   .header-controls.open  {
     width: 50%;    
@@ -1251,6 +1259,11 @@ footer a{
     height: 80px;
   }
 
+    /* About-us Section Styles */
+  .aboutUs-details p{
+    font-size: 4cqw;
+  }
+
   /* Store Section Styles */
   .inventory-section{
     min-height:  calc(100vh - 130px - 60px);
@@ -1309,9 +1322,11 @@ footer a{
   }
 
   /* Footer Styles */
-  footer p{
-    font-size: 0.8rem;
+
+  footer{
+    font-size: 4cqw;
   }
+
 
   footer .item-1{
     display: block;
