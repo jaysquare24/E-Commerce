@@ -324,18 +324,6 @@ body.modal-open {
   margin-bottom: 1.5rem;
 }
 
-
-@media screen and  (min-width: 768px) {
-
-  .overlay h1 {
-    font-size: 3.75rem;
-  }
-
-  .overlay h3 {
-    font-size: 1.5rem;
-  }
-}
-
 .overlay h3 {
   font-size: 1.125rem;
   margin-bottom: 2rem;
@@ -516,9 +504,9 @@ body.modal-open {
   width: 90%;
   margin: 2rem auto 0;
   display: grid;
+  padding: 0;
   grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
   gap: 12px;
-
 }
 
 
@@ -890,9 +878,20 @@ footer a{
   filter: brightness(0) invert(0);
 }
 
+@media screen and  (min-width: 768px) {
+  .overlay h1 {
+    font-size: 3.75rem;
+  }
+
+  .overlay h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
 @media screen and (max-width: 1180px){
   .header button, .header .link{
-     font-size: 1.4cqw;
+    font-size: 1.4cqw;
   }
 
   footer{
