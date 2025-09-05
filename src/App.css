@@ -1226,13 +1226,15 @@ footer a{
     overflow: hidden;
   }
   .testimonial-wrapper {
-    flex: 1 1 30%;
-    min-width: 90%;
-    margin: 0 35px;
-    max-width: 550;
-    min-height: 200px; 
+    min-width: 70%;
+    margin: 0 45px;
+    height: 200px;
     position: relative;
     overflow: hidden;
+  }
+
+  .testimonial-card p, .testimonial-card h4{
+    font-size: 3.5cqw;
   }
 
 
@@ -1375,6 +1377,10 @@ footer a{
 
   #search-container {  
     flex-basis: 55%;
+  }
+
+  .testimonial-card p, .testimonial-card h4{
+    font-size: 4cqw;
   }
 
   /* Store Section Styles */
