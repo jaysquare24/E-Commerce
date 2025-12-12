@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const searchTermSlice = createSlice({
+export const searchTermSlice = createSlice({
   name: "searchTerm",
     initialState: "",
     reducers: {
         setSearchTerm: (state, action) => {
-            return action.payload.trim().replace(/\s+/g, ' ');;
+            return action.payload.trim().replace(/\s+/g, ' ');
         },
         clearSearchTerm: () => {
             return "";

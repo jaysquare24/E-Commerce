@@ -2,27 +2,31 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {};
 
-const cartSlice = createSlice({
+export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
     addItem: (state, action) => {
-      const { name, price, img } = action.payload;
-      const existingItem = state[name];
-      const quantity = existingItem ? existingItem.quantity + 1 : 1;
+      const { id, name, price, img, qty, color, size, discountPrice} = action.payload;
+      const existingItem = state[id];
+      const quantity = existingItem ? existingItem.quantity + qty : qty;
 
-      state[name] = {
+      state[id] = {
+        name,
         price,
+        discountPrice,
         quantity,
-        img
+        img, 
+        color,
+        size
       };
     },
 
     removeItem: (state, action) => {
-      const { name } = action.payload;
+      const { id } = action.payload;
 
-      if (state[name]) {
-        delete state[name];
+      if (state[id]) {
+        delete state[id];
       }
     },
 
@@ -31,11 +35,12 @@ const cartSlice = createSlice({
     },
 
     changeItemQuantity: (state, action) => {
-      const { name, quantity } = action.payload;
+      const { id, quantity } = action.payload;
 
-      if (state[name]) {
-        state[name].quantity = quantity;
-        
+      if (quantity <= 0) {
+        delete state[id];
+      } else {
+        state[id].quantity = quantity;
       }
     },
   },
@@ -46,7 +51,7 @@ export const { addItem, changeItemQuantity, removeItem, clearCart} = cartSlice.a
 export default cartSlice.reducer;
 
 export const selectCart = (state) => state.cart;
-export const selectCartItem = (name) => (state) => state.cart[name];
+export const selectCartItem = (id) => (state) => state.cart[id];
 
 export const selectTotalQuantity = (state) =>
   Object.values(state.cart).reduce((total, item) => total + item.quantity, 0);

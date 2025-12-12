@@ -1,24 +1,54 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { inventoryData } from './data.js';
 
-const initialState = [];
 
-const inventorySlice = createSlice({
+
+export const inventorySlice = createSlice({
   name: 'inventory',
-  initialState,
+  initialState: {
+    allItems : inventoryData,
+    filteredItems : []
+  },
   reducers: {
     loadData: (state, action) => {
-      // ✅ Load the inventory data into the state
-      return action.payload || inventoryData; // Fallback to initial data if payload is empty
+      //Load the inventory data into the state
+      state.allItems = action.payload || inventoryData; // Fallback to initial data if payload is empty
+      state.filteredItems = [];
     },
+
+    filterDataByCategory: (state, action) => {
+      const {nomalizedValue, type} = action.payload;
+      
+      state.filteredItems = state.allItems.filter(item => {
+        if(type==='category'){
+          return item.category.toLowerCase().trim() === nomalizedValue
+        }
+
+        if(type==='style'){
+          return item.styles.some(style => style.toLowerCase().trim() === nomalizedValue)
+        }
+
+        if(type === 'new-arrival'){
+          return item.newArrival;
+        }
+        
+        if(type === 'top-selling'){
+          return item.topSelling;
+        }
+
+        return false;
+      })
+      
+    }
   },
 });
 
-// ✅ Export the action
-export const { loadData } = inventorySlice.actions;
+//Export the action
+export const { loadData, filterDataByCategory } = inventorySlice.actions;
 
-// ✅ Export the reducer
+// Export the reducer
 export default inventorySlice.reducer;
 
-// ✅ Selector
-export const selectInventory = (state) => state.inventory;
+//Selector
+export const selectInventory = (state) => state.inventory.allItems;
+export const selectFilteredItem =(state) => state.inventory.filteredItems;

@@ -1,48 +1,91 @@
+import React, { useEffect, useState} from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { inventoryData } from "../features/data";
-import { productsCategories } from "../features/data";
-import { InventoryList } from "./inventory/InventoryList";
-import { BannerSection } from "./BannerSection";
+import { useDispatch} from "react-redux";
+import {
+  setCategory,
+  setStyle,
+  setTopSelling,
+  setNewArrival,
+  resetFilters,
+} from "../features/filterSlice";
+import { Filter } from "./reuseableComponents/Filter";
+import { useFilteredProducts } from "../hook/useFilteredProducts";
+import { ProductList } from "./reuseableComponents/products/ProductList";
+import { BannerSection } from "./reuseableComponents/BannerSection";
+import { productsCategories, styles, newArrivalAndTopselling } from "../features/data";
 
 export const ProductCategory = () => {
-  const { value } = useParams();
+  const { type, value } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const filteredProducts = inventoryData.filter(
-    item => item.category.toLowerCase().trim() === value.toLowerCase().trim()
-  );
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const filteredProductBanner = productsCategories.filter(
-    item => item.value.toLowerCase().trim() === value.toLowerCase().trim()
-  );
+  const normalizedValue = value?.toLowerCase().trim();
+  const filteredProducts = useFilteredProducts();
 
-  const goBack = () => {
-    navigate(-1)
-  }
+  // Apply URL segment filters
+  useEffect(() => {
+    dispatch(resetFilters());
 
-  const banner = filteredProductBanner[0];
+    if (type === "category") dispatch(setCategory(normalizedValue));
+    if (type === "style") dispatch(setStyle(normalizedValue));
+    if (type === "top-selling") dispatch(setTopSelling(true));
+    if (type === "new-arrival") dispatch(setNewArrival(true));
+  }, [type, normalizedValue , dispatch]);
 
- return (
-  <main>
-    {value && (
+  const banner =
+    type === "category"
+    ? productsCategories.find((i) => i.value.toLowerCase() === normalizedValue)
+    : type === "style"
+    ? styles.find((i) => i.label.toLowerCase() === normalizedValue)
+    : type === "new-arrival"
+    ? newArrivalAndTopselling.find( i => i.label.toLowerCase() === "new-arrival")
+    : type === "top-selling"
+    ? newArrivalAndTopselling.find( i => i.label.toLowerCase() === "top-selling")
+    : null;
+
+  return (
+    <main>
       <section className="product-section">
         {banner && (
           <BannerSection
-            imageSrc={banner.img}
-            subheading={`Products in ${banner.label} category`}
-            tagline= {`Enjoy shopping our elegant ${banner.label}`}
-            onClickhandler={goBack}
+            imageSrc={type === "category" || type === "style" ? banner.img : banner.banner}
+            subheading={
+              type === "category" || type === "style"
+                ? `Products in ${banner.label} ${type}`
+                : `Products in ${banner.label}`
+            }
+            tagline={`Enjoy shopping our elegant ${banner.label}`}
+            onClickhandler={() => navigate(-1)}
             buttonText="Go Back"
           />
         )}
+        
+        <div className="product-category-container">
+          {/* Filter UI (state-only, not in URL) */}
+          {isFilterOpen &&
+           <Filter type={type} setIsFilterOpen={setIsFilterOpen}/>
+          }
 
-        {filteredProducts.length === 0 ? (
-          <p>No products found in this category.</p>
-        ) : (
-          <InventoryList items={filteredProducts}/>
-        )}
+          {/* Products UI */}
+          <div className={`products-group-container ${ isFilterOpen ? 'with-filter-open' : ''}`}>
+            <div className="products-title-container">
+              <h2 className="products-title">
+               {banner.label}
+              </h2>
+              <button
+              onClick={() => setIsFilterOpen(!isFilterOpen)}
+              >
+                <img src="/resources/filter.svg" alt="open filter icon"/>
+              </button>
+            </div>
+            {filteredProducts &&(
+              <ProductList items={filteredProducts} label={banner.label} setIsFilterOpen={setIsFilterOpen} />
+            )}
+          </div>
+        </div>
       </section>
-    )}
-  </main>
- );
+    </main>
+  );
 };

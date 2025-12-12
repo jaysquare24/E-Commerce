@@ -1,4 +1,4 @@
-import { BannerSection } from "./BannerSection"
+import { BannerSection } from "./reuseableComponents/BannerSection"
 
 export const AboutUs = () => { 
   return(
