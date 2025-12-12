@@ -898,8 +898,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  align-items: center;
-  justify-content: center;
+  align-content: center;
 }
 
 .filter.colors li{
@@ -910,16 +909,11 @@ body {
   border-radius: 50%;
   text-decoration: none;
   text-align: center;
-  align-content: center;
   color: #FFFFFF;
-  align-content: center;
   justify-content: center;
   text-align: center;
-  align-self: center;
-  justify-self: center;
   align-items: center;
-  vertical-align: center;
-
+  
 }
 
 .filter.colors .filter-color-white{
@@ -1215,7 +1209,6 @@ body {
   display: flex;
   gap: 16px;
   align-content: center;
-  align-items: center;
 }
 
 .color-option{
@@ -1223,15 +1216,11 @@ body {
   width: 37px;
   height: 37px;
   border-radius: 50%;
-  align-content: center;
   justify-content: center;
   text-align: center;
-  align-self: center;
-  justify-self: center;
   color: #FFFFFF;
   cursor: pointer;
   align-items: center;
-  vertical-align: middle;
 }
 
 .color-option.color-white{
