@@ -121,9 +121,6 @@ export const  Filter =  ({type, setIsFilterOpen}) => {
                       {selectedColor === color ? '✓' : ''}
                     </li>
                     ))}
-
-                   
-
                 </ul>
             </div>
 

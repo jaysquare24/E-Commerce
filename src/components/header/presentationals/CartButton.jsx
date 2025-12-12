@@ -16,7 +16,7 @@ export const CartButton = () =>{
 
 
   return (
-    <div>
+    
       <NavLink to={'/cart'} id="cart-button">
         <img
           className={`cart-icon${cartItemsLength > 0 ? " cart-icon--active" : ""}`}
@@ -28,7 +28,7 @@ export const CartButton = () =>{
         )}
       </NavLink>
        
-    </div>
+    
   )
 
 }

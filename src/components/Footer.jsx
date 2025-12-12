@@ -46,14 +46,14 @@ export const Footer = () => (
             <Link to="/shop">Account</Link>
             <Link to="/">Delivery Details</Link>
             <Link to="/aboutUs">Orders</Link>
-            <Link to="/aboutUs">Paymen</Link>
+            <Link to="/aboutUs">Payment</Link>
           </div>
         </nav>
 
         <div className="contacts-container">
           <h4>CONTACTS</h4>
           <p><img src="/resources/icons8-phone-call-48.png" alt="" aria-hidden="true"/> +2347063457926</p>
-          <p><img src="/resources/icons8-location-32.png" alt="" aria-hidden="true"/> shop 10 Dave plaza opposite Hero gate, Trade fair, Osogbo.</p>
+          <p><img src="/resources/icons8-location-32.png" alt="" aria-hidden="true"/> shop 10 Dave plaza, Trade fair, Osogbo.</p>
           <p><img src="/resources/icons8-mail-48.png" alt="" aria-hidden="true"/> shop.co@gmail.com</p>
         </div>
       </div>

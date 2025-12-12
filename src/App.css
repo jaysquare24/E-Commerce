@@ -58,7 +58,6 @@ body {
   box-sizing: border-box;
   border-right: 1.5px solid white;
   padding: 3px 0;
- 
 }
 
 .header-title {
@@ -90,6 +89,7 @@ body {
   margin: auto;
   justify-content:space-between;
   align-items: center;
+  gap: 12px;
 }
 
 .menu-button {
@@ -105,10 +105,10 @@ body {
 
 .header-controls {
   display: flex;
-  flex-basis: 80%;
+  flex-basis: 90%;
   align-items: center;
   justify-content:space-evenly;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .logo{
@@ -126,6 +126,7 @@ body {
   font-size: 16px;
   color: black;
   text-decoration: none;
+  border: 1px solid black;
 }
 
 .active {
@@ -264,18 +265,19 @@ body {
 }
 
 #cart-button{
-  all:unset;
   position: relative;
   background: none !important;
   height: 35px;
   cursor: pointer;
-  border: none;
   border-radius: 5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 40px;
 }
 
 .cart-icon {
-  display: block;
-  margin: 0 auto 0;
+  vertical-align: middle;
   background-color: none;
 }
 
@@ -286,7 +288,7 @@ body {
 .cart-items-length{
   position: absolute;
   top:25%;
-  right:22px;
+  right: 84%;
   font-size: 0.8rem;
 }
 
@@ -492,6 +494,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   row-gap: 5px;
+  
 }
 
 .currency{
@@ -521,7 +524,6 @@ body {
   line-height: 100%;
   color: #FF3333;
   vertical-align:4px;
-
 }
 
 .view-all-button{
@@ -900,8 +902,8 @@ body {
 }
 
 .filter.colors li{
-  height: 40px;
   width: 40px;
+  height: 40px;
   border: 1px solid #0000006d;
   border-radius: 50%;
   text-decoration: none;
@@ -1034,12 +1036,13 @@ body {
   display: block;
   width: 100%;
   border-radius: var(--border-radius);
+  height: 250px;
 }
 
 .inventoryImage-container img {
   border-radius: var(--border-radius);
   width: 100%;
-  height: 250px;
+  height: 100%;
 }
 
 /* Button initially hidden */
@@ -1195,6 +1198,7 @@ body {
 .color-options-container{
   display: flex;
   gap: 16px;
+  align-content: center;
 }
 
 .color-option{
@@ -1203,6 +1207,8 @@ body {
   border-radius: 50%;
   align-content: center;
   text-align: center;
+  align-self: center;
+  justify-self: center;
   color: #FFFFFF;
   cursor: pointer;
 }
@@ -1259,9 +1265,10 @@ body {
 .quantity-container button{
   border: none;
   font-size: 26px;
-  background-color: none;
+  background-color: #F0F0F0;;
   width: 34px;
   cursor: pointer;
+  color: #000000;
 }
 
 .product-add-to-cart-button{
@@ -1784,6 +1791,7 @@ form button{
   font-weight: 500;
   color: #000000;
   cursor: pointer;
+  background: #FFFFFF;
 }
 
 footer .item-1{
@@ -2079,7 +2087,7 @@ footer a, .icon8{
   .header-controls.open  {
     display: block; 
     position:absolute;
-    top: 90px;
+    top: 110px;
     left: 0;
     width: 45%; 
     background-color:#FFFFFF;
@@ -2098,7 +2106,7 @@ footer a, .icon8{
   .link{
     color: #000000;
     border-bottom: 1.5px solid whitesmoke;
-    margin-top:13px;
+    margin-top:15px;
   }
 
   .link:first-child{
@@ -2128,20 +2136,20 @@ footer a, .icon8{
 
   .dropdown-toggle {
     border-bottom: 1.5px solid whitesmoke;
-    margin-top:13px;
+    margin-top:15px;
     width: 100%;
     text-align: left;
     padding-left: 15px;  
   }
 
   .category.dropdown-list{
-    top: 34%;
-    left: 35%;
+    position: relative;
+    inset: 0;
   }
 
   .style.dropdown-list{
-    top: 40.5%;
-    left: 25%;
+    position: relative;
+   inset: 0;
   }
 
   #currency-filter-button{
