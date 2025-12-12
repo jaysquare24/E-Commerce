@@ -118,7 +118,7 @@ export const  Filter =  ({type, setIsFilterOpen}) => {
                     style={{backgroundColor:color}}
                     className={isWhiteFamily(color.toLowerCase()) ? 'filter-color-white' : ''}
                     >
-                      {selectedColor === color ? '✓' : ''}
+                      {selectedColor === color ? <span>✓</span> : ''}
                     </li>
                     ))}
                 </ul>
