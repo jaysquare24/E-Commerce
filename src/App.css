@@ -126,7 +126,6 @@ body {
   font-size: 16px;
   color: black;
   text-decoration: none;
-  border: 1px solid black;
 }
 
 .active {
@@ -1199,6 +1198,7 @@ body {
   display: flex;
   gap: 16px;
   align-content: center;
+  align-items: center;
 }
 
 .color-option{
@@ -1211,6 +1211,8 @@ body {
   justify-self: center;
   color: #FFFFFF;
   cursor: pointer;
+  align-items: center;
+  vertical-align: middle;
 }
 
 .color-option.color-white{
@@ -2081,7 +2083,7 @@ footer a, .icon8{
   }
 
   .header button, .header .link{
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .header-controls.open  {
@@ -2145,17 +2147,19 @@ footer a, .icon8{
   .category.dropdown-list{
     position: relative;
     inset: 0;
+    width: 150px;
   }
 
   .style.dropdown-list{
     position: relative;
-   inset: 0;
+    inset: 0;
+    width: 150px;
   }
 
   #currency-filter-button{
     margin-top:13px;
     padding: 0 0 0 15px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .currency-filters-dropdown{
