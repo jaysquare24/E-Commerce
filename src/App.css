@@ -894,14 +894,16 @@ body {
   
 }
 
-.filter.colors ul, .filter.sizes ul{
+.filter.colors ul{
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  align-items:center;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter.colors li{
+  display: flex;
   width: 40px;
   height: 40px;
   border: 1px solid #0000006d;
@@ -909,15 +911,26 @@ body {
   text-decoration: none;
   text-align: center;
   align-content: center;
-}
-
-.filter.colors li span{
   color: #FFFFFF;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  align-items: center;
+  vertical-align: center;
+
 }
 
-.filter.colors .filter-color-white span{
+.filter.colors .filter-color-white{
   color: #000000;
 }
+
+.filter.sizes ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}  
 
 .filter.sizes li{
   padding: 10px 20px;
