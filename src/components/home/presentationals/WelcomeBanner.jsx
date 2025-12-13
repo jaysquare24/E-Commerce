@@ -7,15 +7,14 @@ export const WelcomeBanner = () => {
   
   return (
     <section className="welcome-banner" role='banner'>
-      
       <img
         src="resources/Rectangle2.png"
         alt="fashion banner background"
         className="background-img"
       />
       <div className="overlay">
-      <img src="resources/Vector1.svg" alt='background styling' className='firstStar'/>
-      <img src='resources/Vector.svg' alt='background styling' className='secondStar'/>
+        <img src="resources/Vector1.svg" alt='background styling' className='firstStar'/>
+        <img src='resources/Vector.svg' alt='background styling' className='secondStar'/>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
