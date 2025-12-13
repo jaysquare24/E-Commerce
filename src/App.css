@@ -204,6 +204,7 @@ body {
   border-radius: 10px;
   padding: 6px;
   border: 1px solid #FFFFFF;
+  color: #000000;
 }
 
 .currency-filters-dropdown{
@@ -2899,7 +2900,7 @@ footer a, .icon8{
   }
 
   .menu-button{
-    margin-right: 15px;
+    margin-right: 5px;
   }
 
   .searchAndCart-group{

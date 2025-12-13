@@ -10,7 +10,7 @@ export const inventoryData = [
     inStock: true,
     colors: ["white", "blue", "green"],
     sizes: ["S", "M", "L", "XL"],
-    img: ["/resources/shirtimage1.png", "/resources/shirtimage2.svg", "/resources/shirtimage3.svg"],
+    img: ["/resources/shirtimage1.png", "/resources/shirtimage2.png", "/resources/shirtimage3.png"],
     newArrival: false,
     topSelling: true,
     rating: 4.5,
