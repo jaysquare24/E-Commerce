@@ -40,7 +40,11 @@ export const SearchProducts = () => {
     />
 
     <section className='inventory-section'>
-      <ProductList items={filteredInventory} loading={loading} />
+      <div className='product-category-container'>   
+        <div className= "products-group-container">
+          <ProductList items={filteredInventory} loading={loading} />
+        </div>
+      </div>
     </section>
   </main>
  );

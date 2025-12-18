@@ -6,7 +6,6 @@ import currencyFilterReducer from './features/currencyFilterSlice.js';
 import searchTermReducer from './features/searchTermSlice.js';
 import filterReducer  from './features/filterSlice.js';
 
-// Correct: wrap your reducers in a 'reducer' object
 export const store = configureStore({
   reducer: {
     inventory: inventoryReducer,

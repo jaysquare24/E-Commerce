@@ -26,8 +26,7 @@ export const useFilteredProducts = () => {
       if (
         item.price < (filters.price.min || 0) ||
         item.price > (filters.price.max || Infinity)
-      )
-        return false;
+      ) return false;
 
       return true;
     });

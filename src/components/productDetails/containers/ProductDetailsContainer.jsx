@@ -16,7 +16,6 @@ export const ProductDetailsContainer = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
 
-
     const Tabs = {
        REVIEW:"review-tab",
        FORM: "write-review-tab"
@@ -27,14 +26,13 @@ export const ProductDetailsContainer = () => {
     const [selectedColor, setSelectedColor] = useState(product ? product.colors[0] : null);
     const [activeTab, setActiveTab] = useState(Tabs.REVIEW);
     const [customerReview, setCustomerReview] = useState({ date: formattedDate});
-     const [reviews, setReviews] = useState(product?.reviews || []);
+    const [reviews, setReviews] = useState(product?.reviews || []);
 
     //update product quantity
     const [quantity, setQuantity] = useState(1);
 
     const onAddQuantityHandler = () =>{
-          setQuantity(prev => prev + 1);
-       
+        setQuantity(prev => prev + 1); 
     }
 
     const onSubQuantityHandler = () => {
@@ -44,7 +42,7 @@ export const ProductDetailsContainer = () => {
     }
 
     const onChangeReviewHandler = ({target}) =>{
-        const {name, value} =target;
+        const {name, value} = target;
         setCustomerReview(prev => ({...prev, [name]:value }))  
     }
 
@@ -53,8 +51,6 @@ export const ProductDetailsContainer = () => {
         setReviews(prev => [customerReview, ...prev]);
         setCustomerReview({ date: formattedDate});
         alert("Review submitted successfully! \nThank you for your feedback.");
-
-        
 
     }
 
@@ -68,16 +64,12 @@ export const ProductDetailsContainer = () => {
 
     const productSizeFullMeaningArray = product?.sizes?.map(size => sizeMap[size]).filter(Boolean)||[];
     const [selectedProductSizes, setSelectedProductSizes] = useState(productSizeFullMeaningArray? productSizeFullMeaningArray[0] : null);
-   
-
-
-
 
    //Manage re-render
 
-   useEffect(() => {
+    useEffect(() => {
       dispatch(loadData());
-   }, [dispatch]);
+    }, [dispatch]);
 
     useEffect(() => {
     if(product){

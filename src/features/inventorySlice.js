@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { inventoryData } from './data.js';
 
 
-
 export const inventorySlice = createSlice({
   name: 'inventory',
   initialState: {
@@ -43,12 +42,9 @@ export const inventorySlice = createSlice({
   },
 });
 
-//Export the action
 export const { loadData, filterDataByCategory } = inventorySlice.actions;
 
-// Export the reducer
 export default inventorySlice.reducer;
 
-//Selector
 export const selectInventory = (state) => state.inventory.allItems;
 export const selectFilteredItem =(state) => state.inventory.filteredItems;

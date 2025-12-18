@@ -53,11 +53,4 @@ export default cartSlice.reducer;
 export const selectCart = (state) => state.cart;
 export const selectCartItem = (id) => (state) => state.cart[id];
 
-export const selectTotalQuantity = (state) =>
-  Object.values(state.cart).reduce((total, item) => total + item.quantity, 0);
 
-export const selectTotalPrice = (state) =>
-  Object.values(state.cart).reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );

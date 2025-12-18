@@ -27,7 +27,7 @@ export const filterSlice = createSlice({
       state.newArrival = action.payload;
     },
     setPriceRange: (state, action) => {
-      state.price = action.payload; // 
+      state.price = action.payload;  
     },
     setColor: (state, action) => {
       state.color = action.payload;
@@ -52,5 +52,4 @@ export const {
 
 export default filterSlice.reducer;
 
-// Selector
 export const selectFilters = (state) => state.filters;

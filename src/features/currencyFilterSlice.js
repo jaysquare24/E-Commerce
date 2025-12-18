@@ -10,12 +10,9 @@ const initialState = 'USD';
   },
 });
 
-// Export the action
 export const { setCurrency } = currencyFilterSlice.actions;
 
-// Export the reducer
 export default currencyFilterSlice.reducer;
 
-// Export a selector
 export const selectCurrencyFilter = (state) => state.currencyFilter;
 
