@@ -33,7 +33,7 @@ export const ProductView = ({
                     ))}   
                 </div>
                 <div className='main-product-image'>
-                    <img src={mainImgSrc} alt={name} />
+                    <img src={mainImgSrc} alt={name}  loading="lazy"/>
                 </div>
             </div>
             <div className="product-details-content">
