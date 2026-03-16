@@ -1,22 +1,22 @@
-# 🛒 React E-Commerce Store
+# React E-Commerce Store
 
 A modern, modular e-commerce front-end built with **React**, **Redux**, and **Vite**. Designed with scalability, maintainability, and performance in mind.
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🛍️ Dynamic product inventory with currency switcher
-- 💵 Multi-currency support with real-time price conversion
-- 🧺 Fully functional shopping cart (add, remove, update quantity)
-- 🔍 Search filtering for products
-- ♻️ Global state management using Redux
-- 🧱 Modular components with clear separation of concerns
-- 🚀 Optimized for performance with Vite
+-  Dynamic product inventory with currency switcher
+-  Multi-currency support with real-time price conversion
+-  Fully functional shopping cart (add, remove, update quantity)
+-  Search filtering for products
+-  Global state management using Redux
+-  Modular components with clear separation of concerns
+-  Optimized for performance with Vite
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 src/
 ├── components/
@@ -47,9 +47,9 @@ src/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
-```bash
+```bash`
 # Clone the repository
 git clone https://github.com/your-username/react-ecommerce-store.git
 cd react-ecommerce-store
@@ -60,7 +60,7 @@ npm install
 # Start the development server
 npm run dev
 
-## 🧠 Technologies Used
+## Technologies Used
 
 - **React** (Component-based architecture)
 - **Redux Toolkit** (State management)
@@ -70,7 +70,7 @@ npm run dev
 
 ---
 
-## ✅ Available Scripts
+## Available Scripts
 
 | Command           | Description                     |
 |-------------------|---------------------------------|
@@ -80,22 +80,22 @@ npm run dev
 
 ---
 
-## 🧪 Future Improvements (Optional)
+## Future Improvements (Optional)
 
-- ✅ Pagination for inventory
-- ✅ Checkout integration
-- ✅ Product detail pages with routing
-- ✅ User login/authentication
-- ✅ Backend API
+- Pagination for inventory
+- Checkout integration
+- Product detail pages with routing
+- User login/authentication
+- Backend API
 
 ---
 
-## 🧑‍💻 Author
+## Author
 
 **Jamiu Olajide**  
 Frontend Developer | React & Redux Enthusiast  
-🔗 jamiuolajide.netlify.app 
-📧 devjamiuolajide@gmail.com
+jamiuolajide.netlify.app 
+devjamiuolajide@gmail.com
 
 
 ## 📄 License
